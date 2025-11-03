@@ -60,5 +60,12 @@ def generate_launch_description():
         [
         OpaqueFunction(function=rs_launch.launch_setup,
                 kwargs = {'params' : set_configurable_parameters(params)}
-        )
+        ),
+        launch_ros.actions.Node(
+            package='rviz2',
+            namespace='',
+            executable='rviz2',
+            name='rviz2',
+            arguments=['-d', [ThisLaunchFileDir(), '/rviz/urdf_pointcloud.rviz']]
+    )
     ])
