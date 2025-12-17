@@ -53,6 +53,8 @@ configurable_parameters = [{'name': 'camera_name',                  'default': '
                            {'name': 'depth_module.gain',            'default': '16', 'description': 'Depth module manual gain value'},
                            {'name': 'depth_module.hdr_enabled',     'default': 'false', 'description': 'Depth module hdr enablement flag. Used for hdr_merge filter'},
                            {'name': 'depth_module.enable_auto_exposure', 'default': 'true', 'description': 'enable/disable auto exposure for depth image'},
+                           {'name': 'depth_module.laser_power',          'default': '150.0', 'description': 'IR laser power (0 disables projector)'},
+                           {'name': 'depth_module.emitter_enabled', 'default': 'true', 'description': 'enable/disable IR emitter (projector)'},
                            {'name': 'depth_module.exposure.1',      'default': '7500', 'description': 'Depth module first exposure value. Used for hdr_merge filter'},
                            {'name': 'depth_module.gain.1',          'default': '16', 'description': 'Depth module first gain value. Used for hdr_merge filter'},
                            {'name': 'depth_module.exposure.2',      'default': '1', 'description': 'Depth module second exposure value. Used for hdr_merge filter'},

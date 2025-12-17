@@ -35,14 +35,17 @@ import rs_launch
 local_parameters = [{'name': 'camera_name',                  'default': 'camera', 'description': 'camera unique name'},
                     {'name': 'camera_namespace',             'default': 'camera', 'description': 'camera namespace'},
                     {'name': 'enable_color',                 'default': 'false', 'description': 'enable color stream'},
-                    {'name': 'enable_depth',                 'default': 'true', 'description': 'enable depth stream'},
+                    {'name': 'enable_depth',                 'default': 'false', 'description': 'enable depth stream'},
+                    {'name': 'enable_infra1',                'default': 'true', 'description': 'enable depth stream'},
                     {'name': 'enable_infra2',                'default': 'true', 'description': 'enable depth stream'},
                     {'name': 'enable_sync',                  'default': 'true', 'description': 'enable sync mode'},
-                    {'name': 'pointcloud.enable',            'default': 'true', 'description': 'enable pointcloud'},
+                    {'name': 'pointcloud.enable',            'default': 'false', 'description': 'enable pointcloud'},
                     {'name': 'pointcloud.stream_filter',     'default': '3', 'description': 'pointcloud with infrared'},
                     # Set default profiles (WxHxFPS) so Infra and Depth FPS are fixed by default
-                    {'name': 'depth_module.infra_profile',   'default': '848x480x30', 'description': 'infra streams (0/1/2) profile'},
-                    {'name': 'depth_module.depth_profile',   'default': '848x480x30', 'description': 'depth stream profile'},
+                    {'name': 'depth_module.infra_profile',   'default': '640x480x30', 'description': 'infra streams (0/1/2) profile'},
+                    {'name': 'depth_module.depth_profile',   'default': '640x480x30', 'description': 'depth stream profile'},
+                    {'name': 'depth_module.laser_power',    'default': '0.0', 'description': 'IR laser power (0 disables projector)'},
+                    {'name': 'depth_module.emitter_enabled', 'default': 'false', 'description': 'enable/disable IR emitter (projector)'},
                     {'name': 'enable_gyro',                  'default': 'true', 'description': "'enable gyro stream'"},
                     {'name': 'enable_accel',                 'default': 'true', 'description': "'enable accel stream'"},
                     {'name': 'unite_imu_method',             'default': "2", 'description': '[0-None, 1-copy, 2-linear_interpolation]'},
@@ -67,5 +70,5 @@ def generate_launch_description():
             executable='rviz2',
             name='rviz2',
             arguments=['-d', [ThisLaunchFileDir(), '/rviz/urdf_pointcloud.rviz']]
-    )
+        )
     ])
